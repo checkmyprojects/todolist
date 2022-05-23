@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoListComponent implements OnInit {
 
+  idForTodo: number = 3;
+  todoTitle: string = '';
   todos = [{
     'id': 1,
     'name': 'first one',
@@ -19,7 +21,19 @@ export class TodoListComponent implements OnInit {
     'editing': false
   }];
   
-
+  addTodo() :void{
+    if(this.todoTitle.trim().length === 0){
+      return;
+    }
+    this.todos.push({
+      'id': this.idForTodo,
+      'name': this.todoTitle,
+      'completed': true,
+      'editing': false
+    })
+    this.todoTitle = '';
+    this.idForTodo++;
+  }
   constructor() { }
 
   ngOnInit(): void {

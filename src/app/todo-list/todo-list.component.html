@@ -1,5 +1,7 @@
 <p>todo-list works!</p>
 
+<input type="text" placeholder="add a ToDo" [(ngModel)]="todoTitle" (keyup.enter)="addTodo()">
+
 <div *ngFor="let todo of todos">
     <div>
         <input type="checkbox" *ngIf="todo.completed" checked="checked">
