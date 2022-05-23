@@ -5,9 +5,8 @@
 <div *ngFor="let todo of todos">
     <div>
         <input type="checkbox" *ngIf="todo.completed" checked="checked">
+        <input type="checkbox" *ngIf="!todo.completed">
         <span>{{todo.name}}</span>
-    </div>
-    <div (click)="deleteTodo(todo.id)">
-        X
-    </div>
+        <span (click)="deleteTodo(todo.id)"> X</span>
+    </div> 
 </div>

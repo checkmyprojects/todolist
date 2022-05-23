@@ -28,7 +28,7 @@ export class TodoListComponent implements OnInit {
     this.todos.push({
       'id': this.idForTodo,
       'name': this.todoTitle,
-      'completed': true,
+      'completed': false,
       'editing': false
     })
     this.todoTitle = '';
