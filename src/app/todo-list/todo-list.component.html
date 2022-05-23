@@ -7,4 +7,7 @@
         <input type="checkbox" *ngIf="todo.completed" checked="checked">
         <span>{{todo.name}}</span>
     </div>
+    <div (click)="deleteTodo(todo.id)">
+        X
+    </div>
 </div>

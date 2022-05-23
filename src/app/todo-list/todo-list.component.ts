@@ -34,6 +34,10 @@ export class TodoListComponent implements OnInit {
     this.todoTitle = '';
     this.idForTodo++;
   }
+
+  deleteTodo(id:number) :void{
+    this.todos = this.todos.filter(todo => todo.id != id);
+  }
   constructor() { }
 
   ngOnInit(): void {
