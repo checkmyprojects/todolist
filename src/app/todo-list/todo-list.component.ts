@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoListComponent implements OnInit {
 
+  todos = [{
+    'id': 1,
+    'name': 'first one',
+    'completed': true,
+    'editing': false
+  },{
+    'id': 2,
+    'name': 'second one',
+    'completed': false,
+    'editing': false
+  }];
+  
+
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

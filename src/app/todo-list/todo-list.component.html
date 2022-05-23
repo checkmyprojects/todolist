@@ -1,1 +1,8 @@
 <p>todo-list works!</p>
+
+<div *ngFor="let todo of todos">
+    <div>
+        <input type="checkbox" *ngIf="todo.completed" checked="checked">
+        <span>{{todo.name}}</span>
+    </div>
+</div>
