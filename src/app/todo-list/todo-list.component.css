@@ -59,12 +59,28 @@ input[type=checkbox] {
 .filter > p{
     /* width: 31%; */
     /* text-align: center; */
+    border: 1px solid #FF4742;
     background-color: #FF4742;
-    border-radius: 10px;
+    border-radius: 6px;
     padding: 3px;
     color: white;
     width: 80px;
     text-align: center;
+}
+
+.filter >p:hover{
+    cursor: pointer;
+}
+
+.filter >p:hover,
+.filter >p:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #FF4742;
+}
+
+.filter >p:active {
+    opacity: .5;
 }
 
 .flextest{
