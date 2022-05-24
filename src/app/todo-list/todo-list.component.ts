@@ -10,7 +10,7 @@ export class TodoListComponent implements OnInit {
 
   // idForTodo: number = 3;
   inputTodo: string = '';
-  editingTodo: string = '';
+  //editingTodo: string = '';
   // todos = [
   //   {
   //   'id': 1,
