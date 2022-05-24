@@ -6,7 +6,7 @@
     <div>
         <input (click)="toggleDone(i)" type="checkbox" *ngIf="todo.completed" checked="checked">
         <input (click)="toggleDone(i)" type="checkbox" *ngIf="!todo.completed">
-        <span *ngIf="!todo.edit" (click)="setEdit(i)">{{todo.name}}</span>
+        <span *ngIf="!todo.edit" (dblclick)="setEdit(i)">{{todo.name}}</span>
         <!-- <input [(ngModel)]="editingTodo" (keyup.enter)="editTodo(i)" type="text" value="{{todo.name}}"> -->
         <input *ngIf="todo.edit" #editText (keyup.enter)="editTodo(i, editText.value)" type="text" value="{{todo.name}}">
         <span (click)="deleteTodo(i)"> X</span>
