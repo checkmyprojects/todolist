@@ -9,17 +9,17 @@ export class TodoListComponent implements OnInit {
 
   idForTodo: number = 3;
   todoTitle: string = '';
-  todos = [{
+  todos = [
+    {
     'id': 1,
     'name': 'first one',
-    'completed': true,
-    'editing': false
-  },{
+    'completed': true
+    },
+    {
     'id': 2,
     'name': 'second one',
-    'completed': false,
-    'editing': false
-  }];
+    'completed': false
+    }];
   
   addTodo() :void{
     if(this.todoTitle.trim().length === 0){
@@ -28,12 +28,14 @@ export class TodoListComponent implements OnInit {
     this.todos.push({
       'id': this.idForTodo,
       'name': this.todoTitle,
-      'completed': true,
-      'editing': false
-    })
+      'completed': false});
+
     this.todoTitle = '';
     this.idForTodo++;
   }
+
+
+
 
   deleteTodo(id:number) :void{
     this.todos = this.todos.filter(todo => todo.id != id);
