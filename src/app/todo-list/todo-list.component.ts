@@ -8,8 +8,9 @@ import { Todo } from '../models/Todo';
 })
 export class TodoListComponent implements OnInit {
 
-  idForTodo: number = 3;
+  // idForTodo: number = 3;
   inputTodo: string = '';
+  editingTodo: string = '';
   // todos = [
   //   {
   //   'id': 1,
@@ -47,7 +48,7 @@ export class TodoListComponent implements OnInit {
     
 
     this.inputTodo = '';
-    this.idForTodo++;
+    // this.idForTodo++;
   }
 
 
@@ -66,22 +67,33 @@ export class TodoListComponent implements OnInit {
     })
   }
 
+  editTodo(id:number) :void{
+    this.todos.map((value, idx) => {
+      if(idx === id) {
+        console.log(value.name)
+        value.name = this.editingTodo;
+        console.log("edited")
+      }
+      return value;
+    })
+  }
+
   constructor() { }
 
   ngOnInit(): void {
-    // this.todos = [
-    //   {
-    //     //id:1,
-    //     name: "First Todo",
-    //     completed: false
-    //   },
-    //   {
-    //     //id:2,
-    //     name: "Second Todo",
-    //     completed: true
-    //   }
+    this.todos = [
+      {
+        //id:1,
+        name: "First Todo",
+        completed: false
+      },
+      {
+        //id:2,
+        name: "Second Todo",
+        completed: true
+      }
 
-    // ];
+    ];
   }
 
 }
