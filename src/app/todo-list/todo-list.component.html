@@ -1,11 +1,11 @@
 <h2>todo-list</h2>
 <div class="flex">
-    <input class="textBox" type="text" placeholder="add a ToDo" [(ngModel)]="inputTodo" (keyup.enter)="addTodo()">
+    <input class="textBox" type="text" placeholder="Add Todo..." [(ngModel)]="inputTodo" (keyup.enter)="addTodo()">
     <input class="button-24" type="submit" value="Add Todo" (click)="addTodo()">
-    <div class="todoList">
-        <span (click)="filterTodos('all')">All</span>
-        <span (click)="filterTodos('pending')">Pending</span>
-        <span (click)="filterTodos('done')">Done</span>
+    <div class="filter">
+        <p (click)="filterTodos('all')">All</p>
+        <p (click)="filterTodos('pending')">Pending</p>
+        <p (click)="filterTodos('done')">Done</p>
     </div>
     <!-- <div *ngFor="let todo of todos; let i = index;">
         <div class="todoList">
@@ -97,5 +97,24 @@
 <div class="flextest">
     <input type="checkbox">
     <span>cosas</span>
-    <span>XXX</span>
+    <span>✖</span>
+</div>
+<div class="filter">
+    <h4 (click)="filterTodos('all')">All</h4>
+    <h4 (click)="filterTodos('pending')">Pending</h4>
+    <h4 (click)="filterTodos('done')">Done</h4>
+</div>
+
+<ul class="flextest">
+    <li (click)="filterTodos('all')">All</li>
+    <li (click)="filterTodos('pending')">Pending</li>
+    <li (click)="filterTodos('done')">Done</li>
+</ul>
+
+<div *ngIf="listView === 'all'" class="filter">
+    <!-- <input type="checkbox" checked="checked"> -->
+    <span >texto</span>
+    <span >texto</span>
+    <span >texto</span>
+    <!-- <span >✖</span> -->
 </div>

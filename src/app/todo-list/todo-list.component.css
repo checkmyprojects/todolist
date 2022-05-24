@@ -1,7 +1,12 @@
 h2{
     text-align: center;
 }
-
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  }
 .inputBox{
     font-size: 16px;
     font-weight: 800;
@@ -13,8 +18,9 @@ h2{
     text-align: center;
 }
 input[type=checkbox] {
-    width: 1.5em;
+    width: 1.5rem;
     height: 1.5em;
+    margin-top: 5px;
   }
 .todoList{
     font-size: 18px;
@@ -23,20 +29,53 @@ input[type=checkbox] {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 320px;
+    width: 300px;
     border: 1px solid #FF4742;
     border-radius: 6px;
     margin: 2px 0;
     padding: 5px;
+    text-align: center;
+}
+
+.filter{
+    font-size: 14px;
+    font-weight: 800;
+    /* line-height: 24px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    /* border: 1px solid #FF4742;
+    background-color: #FF4742;
+    color: white; */
+    border-radius: 6px;
+    margin: 2px 0;
+    /* padding: 5px; */
+    /* height: 1rem; */
+}
+
+.filter > p{
+    /* width: 31%; */
+    /* text-align: center; */
+    background-color: #FF4742;
+    border-radius: 10px;
+    padding: 3px;
+    color: white;
+    width: 80px;
+    text-align: center;
 }
 
 .flextest{
+    width: 300px;
     display: flex;
-    width: 400px;
 }
-.flextest *{
-    display: block;
+.flextest li{
+    display: inline;
+    /* width: 33%; */
+    float: right;
+
 }
+
 
 .flex{
     display: flex;
@@ -62,7 +101,7 @@ input[type=checkbox] {
 /* Add Todo Button */
 .button-24 {
     margin: 2px 0 10px 0;
-    width: 330px;
+    width: 300px;
     background: #FF4742;
     border: 1px solid #FF4742;
     border-radius: 6px;
