@@ -1,13 +1,13 @@
 <p>todo-list works!</p>
 
-<input type="text" placeholder="add a ToDo" [(ngModel)]="todoTitle" (keyup.enter)="addTodo()">
+<input type="text" placeholder="add a ToDo" [(ngModel)]="inputTodo" (keyup.enter)="addTodo()">
 
-<div *ngFor="let todo of todos">
+<div *ngFor="let todo of todos; let i = index;">
     <div>
         <input type="checkbox" *ngIf="todo.completed" checked="checked">
         <input type="checkbox" *ngIf="!todo.completed">
-        <span>{{todo.name}}</span>
-        <span (click)="deleteTodo(todo.id)"> X</span>
+        <span (click)="toggleDone(i)">{{todo.name}}</span>
+        <span (click)="deleteTodo(i)"> X</span>
     </div>
     
 </div>
