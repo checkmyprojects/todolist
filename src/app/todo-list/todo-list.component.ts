@@ -67,11 +67,12 @@ export class TodoListComponent implements OnInit {
     })
   }
 
-  editTodo(id:number) :void{
+  editTodo(id:number, editText:string) :void{
     this.todos.map((value, idx) => {
       if(idx === id) {
         console.log(value.name)
-        value.name = this.editingTodo;
+        value.name = editText;
+        // value.name = this.editingTodo;
         console.log("edited")
       }
       return value;
