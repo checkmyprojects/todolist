@@ -2,8 +2,27 @@
 <div class="flex">
     <input class="textBox" type="text" placeholder="add a ToDo" [(ngModel)]="inputTodo" (keyup.enter)="addTodo()">
     <input class="button-24" type="submit" value="Add Todo" (click)="addTodo()">
-    <div *ngFor="let todo of todos; let i = index;">
+    <div class="todoList">
+        <span (click)="filterTodos('all')">All</span>
+        <span (click)="filterTodos('pending')">Pending</span>
+        <span (click)="filterTodos('done')">Done</span>
+    </div>
+    <!-- <div *ngFor="let todo of todos; let i = index;">
         <div class="todoList">
+            <div>
+                <input (click)="toggleDone(i)" type="checkbox" *ngIf="todo.completed" checked="checked">
+                <input (click)="toggleDone(i)" type="checkbox" *ngIf="!todo.completed">
+            </div>
+            <div>
+                <span *ngIf="!todo.edit" (dblclick)="setEdit(i)">{{todo.name}}</span>
+                
+                <input class="inputBox" *ngIf="todo.edit" #editText (keyup.enter)="editTodo(i, editText.value)" type="text" value="{{todo.name}}">
+            </div>
+            <span (click)="deleteTodo(i)">✖</span>
+        </div>
+    </div> -->
+    <div *ngFor="let todo of todos; let i = index;">
+        <div *ngIf="listView === 'all'" class="todoList">
             <div>
                 <input (click)="toggleDone(i)" type="checkbox" *ngIf="todo.completed" checked="checked">
                 <input (click)="toggleDone(i)" type="checkbox" *ngIf="!todo.completed">
@@ -15,7 +34,34 @@
             </div>
             <span (click)="deleteTodo(i)">✖</span>
         </div>
-        
+    </div>
+    <div *ngFor="let todo of todos; let i = index;">
+        <div *ngIf="listView === 'pending' && !todo.completed" class="todoList">
+            <div>
+                <input (click)="toggleDone(i)" type="checkbox" *ngIf="todo.completed" checked="checked">
+                <input (click)="toggleDone(i)" type="checkbox" *ngIf="!todo.completed">
+            </div>
+            <div>
+                <span *ngIf="!todo.edit" (dblclick)="setEdit(i)">{{todo.name}}</span>
+                <!-- <input [(ngModel)]="editingTodo" (keyup.enter)="editTodo(i)" type="text" value="{{todo.name}}"> -->
+                <input class="inputBox" *ngIf="todo.edit" #editText (keyup.enter)="editTodo(i, editText.value)" type="text" value="{{todo.name}}">
+            </div>
+            <span (click)="deleteTodo(i)">✖</span>
+        </div>
+    </div>
+    <div *ngFor="let todo of todos; let i = index;">
+        <div *ngIf="listView === 'done' && todo.completed" class="todoList">
+            <div>
+                <input (click)="toggleDone(i)" type="checkbox" *ngIf="todo.completed" checked="checked">
+                <input (click)="toggleDone(i)" type="checkbox" *ngIf="!todo.completed">
+            </div>
+            <div>
+                <span *ngIf="!todo.edit" (dblclick)="setEdit(i)">{{todo.name}}</span>
+                <!-- <input [(ngModel)]="editingTodo" (keyup.enter)="editTodo(i)" type="text" value="{{todo.name}}"> -->
+                <input class="inputBox" *ngIf="todo.edit" #editText (keyup.enter)="editTodo(i, editText.value)" type="text" value="{{todo.name}}">
+            </div>
+            <span (click)="deleteTodo(i)">✖</span>
+        </div>
     </div>
 </div>
 <div class="flextest">

@@ -8,6 +8,9 @@ import { Todo } from '../models/Todo';
 })
 export class TodoListComponent implements OnInit {
 
+  //save view filter status (all, done, pending)
+  listView: string = 'all';
+
   // idForTodo: number = 3;
   inputTodo: string = '';
   //editingTodo: string = '';
@@ -54,7 +57,18 @@ export class TodoListComponent implements OnInit {
     // this.idForTodo++;
   }
 
+  filterTodos(state:string){
+    if(state === 'all'){
+      this.listView = state;
+    }else if(state === 'done'){
+      this.listView = state;
+    }else if (state === 'pending'){
+      this.listView = state;
+    }else{
+      return;
+    }
 
+  }
 
 
   deleteTodo(id:number) :void{
