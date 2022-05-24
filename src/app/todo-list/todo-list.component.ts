@@ -34,13 +34,16 @@ export class TodoListComponent implements OnInit {
       this.todos.push({
         //'id': this.idForTodo,
         'name': this.inputTodo,
-        'completed': false});
+        'completed': false,
+        'edit': false
+      });
     }else if(!Array.isArray(this.todos)){
       this.todos = [
         {
           //id:1,
           'name': this.inputTodo,
-          'completed': false
+          'completed': false,
+          'edit': false
         }
       ]
     }
@@ -61,8 +64,11 @@ export class TodoListComponent implements OnInit {
 
   toggleDone(id:number) :void{
     this.todos.map((value, idx) => {
-      if(idx === id) value.completed = !value.completed;
+      if(idx === id){
+        value.completed = !value.completed;
 
+        console.log("done to: "+value.completed);
+      } 
       return value;
     })
   }
@@ -74,7 +80,19 @@ export class TodoListComponent implements OnInit {
         value.name = editText;
         // value.name = this.editingTodo;
         console.log("edited")
+        this.setEdit(id);
       }
+
+      return value;
+    })
+  }
+
+  setEdit(id:number) :void{
+    this.todos.map((value, idx) => {
+      if(idx === id) value.edit = !value.edit;
+
+      console.log("editing: " + value.edit)
+
       return value;
     })
   }
@@ -86,12 +104,14 @@ export class TodoListComponent implements OnInit {
       {
         //id:1,
         name: "First Todo",
-        completed: false
+        completed: false,
+        'edit': false
       },
       {
         //id:2,
         name: "Second Todo",
-        completed: true
+        completed: true,
+        'edit': false
       }
 
     ];
