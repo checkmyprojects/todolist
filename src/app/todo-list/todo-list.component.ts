@@ -28,10 +28,23 @@ export class TodoListComponent implements OnInit {
     if(this.inputTodo.trim().length === 0){
       return;
     }
-    this.todos.push({
-      'id': this.idForTodo,
-      'name': this.inputTodo,
-      'completed': false});
+    
+    if (Array.isArray(this.todos)) {
+      this.todos.push({
+        //'id': this.idForTodo,
+        'name': this.inputTodo,
+        'completed': false});
+    }else if(!Array.isArray(this.todos)){
+      this.todos = [
+        {
+          //id:1,
+          'name': this.inputTodo,
+          'completed': false
+        }
+      ]
+    }
+
+    
 
     this.inputTodo = '';
     this.idForTodo++;
@@ -56,19 +69,19 @@ export class TodoListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.todos = [
-      {
-        id:1,
-        name: "First Todo",
-        completed: false
-      },
-      {
-        id:2,
-        name: "Second Todo",
-        completed: true
-      }
+    // this.todos = [
+    //   {
+    //     //id:1,
+    //     name: "First Todo",
+    //     completed: false
+    //   },
+    //   {
+    //     //id:2,
+    //     name: "Second Todo",
+    //     completed: true
+    //   }
 
-    ];
+    // ];
   }
 
 }
