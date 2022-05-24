@@ -21,7 +21,7 @@
             <span (click)="deleteTodo(i)">✖</span>
         </div>
     </div> -->
-    <div *ngFor="let todo of todos; let i = index;">
+    <div *ngFor="let todo of todos; let i = index;" [class.red]="!todo.completed"  [class.green]="todo.completed">
         <!-- Show Full List -->
         <div *ngIf="listView === 'all'" class="todoList">
             <div>

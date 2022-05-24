@@ -30,7 +30,7 @@ input[type=checkbox] {
     justify-content: space-between;
     align-items: center;
     width: 300px;
-    border: 1px solid #FF4742;
+    /* border: 1px solid #FF4742; */
     border-radius: 6px;
     margin: 2px 0;
     padding: 5px;
@@ -49,7 +49,7 @@ input[type=checkbox] {
     background-color: #FF4742;
     color: white; */
     border-radius: 6px;
-    margin: 2px 0;
+    margin: 8px 0;
     /* padding: 5px; */
     /* height: 1rem; */
 }
@@ -97,10 +97,19 @@ input[type=checkbox] {
     text-align: center;
 }
 
+.red{
+    background-color: red;
+}
+
+.green{
+    background-color: rgb(0, 230, 0);
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+}
 
 /* Add Todo Button */
 .button-24 {
-    margin: 2px 0 10px 0;
+    margin: 2px 0 0 0;
     width: 300px;
     background: #FF4742;
     border: 1px solid #FF4742;
