@@ -11,21 +11,9 @@ export class TodoListComponent implements OnInit {
   //save view filter status (all, done, pending)
   listView: string = 'all';
 
-  // idForTodo: number = 3;
+
   inputTodo: string = '';
-  //editingTodo: string = '';
-  // todos = [
-  //   {
-  //   'id': 1,
-  //   'name': 'first one',
-  //   'completed': true
-  //   },
-  //   {
-  //   'id': 2,
-  //   'name': 'second one',
-  //   'completed': false
-  //   }];
-  
+
   todos: Todo[];
 
   addTodo() :void{
@@ -50,12 +38,9 @@ export class TodoListComponent implements OnInit {
         }
       ]
     }
-
-    
-
+//  Clean input textbox
     this.inputTodo = '';
-    // this.idForTodo++;
-  }
+}
 
   filterTodos(state:string){
     if(state === 'all'){
@@ -72,7 +57,7 @@ export class TodoListComponent implements OnInit {
 
 
   deleteTodo(id:number) :void{
-    // this.todos = this.todos.filter(todo => todo.id != id);
+
     this.todos = this.todos.filter((value, idx) => idx !== id);
   }
 
@@ -92,7 +77,7 @@ export class TodoListComponent implements OnInit {
       if(idx === id) {
         console.log(value.name)
         value.name = editText;
-        // value.name = this.editingTodo;
+
         console.log("edited")
         this.setEdit(id);
       }
@@ -114,21 +99,21 @@ export class TodoListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.todos = [
-      {
-        //id:1,
-        name: "First Todo",
-        completed: false,
-        'edit': false
-      },
-      {
-        //id:2,
-        name: "Second Todo",
-        completed: true,
-        'edit': false
-      }
+    // sample data
 
-    ];
+    // this.todos = [
+    //   {
+    //     name: "First Todo",
+    //     completed: false,
+    //     'edit': false
+    //   },
+    //   {
+    //     name: "Second Todo",
+    //     completed: true,
+    //     'edit': false
+    //   }
+    // ];
+    
   }
 
 }

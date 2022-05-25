@@ -13,8 +13,6 @@ h1{
     font-weight: 800;
     line-height: 24px;
     border: 1px dashed black;
-    /* font-weight: normal; */
-    /* background: transparent; */
     background-color: #FF4742;
     padding: 0;
     margin: 0;
@@ -33,38 +31,26 @@ input[type=checkbox] {
     justify-content: space-between;
     align-items: center;
     width: 300px;
-    /* border: 1px solid #FF4742; */
-    /* border-radius: 6px; */
     margin: 0 2px;
-    /* padding: 5px; */
     text-align: center;
     /* bg style */
     background: url(/assets/img/background-noline.png) repeat-y;
     background-position: 0px -7px;
     padding: 10px 10px;
-    /* border: solid 1px #ddd; */
 }
 
 .filter{
     font-size: 14px;
     font-weight: 800;
-    /* line-height: 24px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 300px;
-    /* border: 1px solid #FF4742;
-    background-color: #FF4742;
-    color: white; */
     border-radius: 6px;
     margin: 8px 0;
-    /* padding: 5px; */
-    /* height: 1rem; */
 }
 
 .filter > p{
-    /* width: 31%; */
-    /* text-align: center; */
     border: 1px solid #FF4742;
     background-color: #FF4742;
     border-radius: 6px;
@@ -88,18 +74,6 @@ input[type=checkbox] {
 .filter >p:active {
     opacity: .5;
 }
-
-.flextest{
-    width: 300px;
-    display: flex;
-}
-.flextest li{
-    display: inline;
-    /* width: 33%; */
-    float: right;
-
-}
-
 
 .flex{
     display: flex;
@@ -177,16 +151,15 @@ input[type=checkbox] {
     border: 1px solid #ccc;
     box-shadow: inset 0 0 30px rgba(0,0,0,0.1), 1px 1px 3px rgba(0,0,0,0.2);
     background: url(/assets/img/background.png) repeat-y;
-  }
-  
-  .papers  {
+}
+
+.papers  {
     position: relative;
     width: 50%;
     padding: 2em;
     margin: 50px auto;
-  }
-  
-  .papers:before, .papers:after  {
+}
+.papers:before, .papers:after  {
     content: "";
     position: absolute;
     left: 0;
@@ -197,15 +170,13 @@ input[type=checkbox] {
     -o-transform: rotate(2.5deg);
     transform: rotateZ(2.5deg);
     z-index: -1;
-  }
-  
-  .papers:after  {
+}
+.papers:after  {
     -webkit-transform: rotateZ(-2.5deg);
     -o-transform: rotate(-2.5deg);
     transform: rotateZ(-2.5deg);
-  }
-  
-  .papers h2  {
+}
+.papers h2  {
     font-size: 1.9em;
     font-weight: normal;
     text-align: center;
@@ -213,9 +184,15 @@ input[type=checkbox] {
     margin-bottom: 1rem;
     border-top: 1px solid #ddd;
     border-bottom: 2px solid #ddd;
-  }
-  
-  .papers p  {
+}
+
+.papers p  {
     text-align: left;
     margin: 1,5em 0;
-  }
+}
+
+@media screen and (max-width: 700px) {
+    .papers{
+        position: inherit;
+    }
+}
