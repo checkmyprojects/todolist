@@ -95,27 +95,3 @@
         </div>
     </div> -->
 </div>
-<div class="flextest">
-    <input type="checkbox">
-    <span>cosas</span>
-    <span>✖</span>
-</div>
-<div class="filter">
-    <h4 (click)="filterTodos('all')">All</h4>
-    <h4 (click)="filterTodos('pending')">Pending</h4>
-    <h4 (click)="filterTodos('done')">Done</h4>
-</div>
-
-<ul class="flextest">
-    <li (click)="filterTodos('all')">All</li>
-    <li (click)="filterTodos('pending')">Pending</li>
-    <li (click)="filterTodos('done')">Done</li>
-</ul>
-
-<div *ngIf="listView === 'all'" class="filter">
-    <!-- <input type="checkbox" checked="checked"> -->
-    <span >texto</span>
-    <span >texto</span>
-    <span >texto</span>
-    <!-- <span >✖</span> -->
-</div>
