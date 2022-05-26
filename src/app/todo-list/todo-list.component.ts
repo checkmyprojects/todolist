@@ -16,6 +16,13 @@ export class TodoListComponent implements OnInit {
 
   todos: Todo[];
 
+  localStorageSaveTodo(){
+    localStorage.setItem('myTodos', JSON.stringify(this.todos));
+  }
+  localStorageGetTodo(){
+    this.todos = JSON.parse(localStorage.getItem('myTodos') || '[]');
+  }
+
   addTodo() :void{
     if(this.inputTodo.trim().length === 0){
       return;
@@ -39,7 +46,7 @@ export class TodoListComponent implements OnInit {
       ]
     }
 //  Clean input textbox
-    localStorage.setItem('myTodos', JSON.stringify(this.todos));
+    this.localStorageSaveTodo();
     this.inputTodo = '';
 }
 
@@ -60,7 +67,7 @@ export class TodoListComponent implements OnInit {
   deleteTodo(id:number) :void{
 
     this.todos = this.todos.filter((value, idx) => idx !== id);
-    localStorage.setItem('myTodos', JSON.stringify(this.todos));
+    this.localStorageSaveTodo();
   }
 
   toggleDone(id:number) :void{
@@ -72,7 +79,7 @@ export class TodoListComponent implements OnInit {
       } 
       return value;
     })
-    localStorage.setItem('myTodos', JSON.stringify(this.todos));
+    this.localStorageSaveTodo();
   }
 
   editTodo(id:number, editText:string) :void{
@@ -87,7 +94,7 @@ export class TodoListComponent implements OnInit {
 
       return value;
     })
-    localStorage.setItem('myTodos', JSON.stringify(this.todos));
+    this.localStorageSaveTodo();
   }
 
   setEdit(id:number) :void{
@@ -103,7 +110,7 @@ export class TodoListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.todos = JSON.parse(localStorage.getItem('myTodos') || '[]');
+    this.localStorageGetTodo();
     
     // sample data
 
