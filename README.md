@@ -16,7 +16,7 @@ I wanted to learn some angular and typescript to use it as a frontend for a spri
 
 Code may need some refactoring and i want to use interfaces and services to make it more "angular-like" instead of "javascript-like".
 
-Right now it uses LocalStorage, but i may add a connection an api for storage/login in the future.
+Right now it uses LocalStorage, but i may add a connection to an api for storage/login in the future.
 
 ## Lessons Learned:
 
